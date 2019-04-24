@@ -1,32 +1,69 @@
 form {
-    padding: 2em 0;
-  }
-  
-  form label {
-    /* display: none; */
-  }
-  
-  input,
-  textarea,
-  button {
-    width: 100%;
-    padding: 1em;
-    margin-bottom: 1em;
-    font-size: 1rem;
-  }
-  
-  input,
-  textarea {
-    border: 1px solid $med-gray;
-    border-radius: 5px;
-  }
-  
-  button {
-    border: 1px solid $link;
-    background-color: $link;
-    color: #fff;
-    cursor: pointer;
-  }
+  display: grid;
+  padding: 2em 0;
+  display: block;
+  position: relative;
+}
+
+form label {
+  display: block;
+  position: relative;
+  top: -42px;
+  left: 16px;
+  font-size: 16px;
+  z-index: 1;
+  transition: all 0.3s ease-out;
+}
+
+input:focus + label, input:valid + label{
+  top: -80px;
+  font-size: 0.875rem;
+  color: #00aced;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 1em;
+  font-size: 1rem;
+}
+
+input {
+  display: block;
+  position: relative;
+  background: none;
+  border: none;
+  border-bottom: 1px solid $link;
+  font-weight: bold;
+  font-size: 16px;
+  z-index: 2;
+}
+
+textarea {
+  border: 1px solid $link;
+}
+textarea + label {
+  display: none;
+}
+textarea:focus {
+  outline: none;
+}
+
+input:focus, input:valid{
+  outline: none;
+  border-bottom: 1px solid $link;
+}
+
+button {
+  border: 1px solid $link;
+  background-color: $link;
+  color: #fff;
+  cursor: pointer;
+}
+
+
 
   input:focus, textarea:focus {
     box-shadow:0 0 15px lighten( $link, 40% );
@@ -43,6 +80,7 @@ form {
   input:valid, textarea:valid {
     background-color: lighten( green, 60% );			
   }
+  
   
   input:invalid, textarea:invalid {
     background-color: lighten( red, 40% );					

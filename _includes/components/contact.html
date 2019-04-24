@@ -1,25 +1,16 @@
-<form name="contact" method="POST" action="/" autocomplete="true">
+<form name="contact" method="POST" data-netlify="true" action="/">
   <fieldset>
     
-    <label for="name">Your name</label>
-    <input type="text" name="name" id="name" placeholder="Name" required autocomplete = "off" autofocus />
-    
-    <label for="email">Email address</label>
-    <input type="email" name="email" id="email" placeholder="Email" required autocomplete = "off"   />
+    <input type="text" name="name" id="name" required autocomplete="name" title="Please enter your name" />
+    <label for="name">Name</label>
 
-    <label for="website">Website</label> 
-		<input type="url" name="website" required placeholder="http://www.example.com" />
+    <input type="email" name="email" id="email" autocomplete="email" title="The domain portion of the email address is invalid (the portion after the @)." pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required />
+    <label for="email">Email</label>
 
-		<label for="number">Number</label> 
-		<input type="number" name="number" min="0" max="10" step="2" required placeholder="Even num < 10">
+    <textarea name="message" id="message" placeholder="Write your message here" rows="7" required></textarea>
+    <label for="message">Message</label>
 
-		<label for="range">Range</label> 
-		<input type="range" name="range" min="0" max="10" step="2" />
-    
-    <label for="message">Your message</label>
-    <textarea name="message" id="message" placeholder="Your message" rows="7"></textarea>
-    
     <button type="submit" name="submit">Send Message</button>
-    
+
   </fieldset>
 </form>
